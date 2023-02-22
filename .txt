@@ -1,0 +1,24 @@
+npm create vite@latest
+
+cd "nameproject"
+code .
+npm run dev
+
+svelte
+typescript
+
+tailwind en svelte
+npx svelte-add@latest tailwindcss
+pnpm install
+pnpm run dev
+
+
+dropzone
+npm install --save dropzone 
+
+
+squoosh -> cambio de imagenes
+npm install --save-dev two-up-element -E
+
+para transformaciones de cloudinary
+pnpm install @cloudinary/url-gen -E
