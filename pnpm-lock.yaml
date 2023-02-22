@@ -1,9 +1,11 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@cloudinary/url-gen': 1.9.1
   '@sveltejs/vite-plugin-svelte': ^2.0.2
   '@tsconfig/svelte': ^3.0.0
   autoprefixer: ^10.4.7
+  dropzone: ^6.0.0-beta.2
   postcss: ^8.4.14
   postcss-load-config: ^4.0.1
   svelte: ^3.55.1
@@ -11,8 +13,13 @@ specifiers:
   svelte-preprocess: ^4.10.7
   tailwindcss: ^3.1.5
   tslib: ^2.5.0
+  two-up-element: 1.0.1
   typescript: ^4.9.3
   vite: ^4.1.0
+
+dependencies:
+  '@cloudinary/url-gen': 1.9.1
+  dropzone: 6.0.0-beta.2
 
 devDependencies:
   '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.55.1+vite@4.1.4
@@ -25,10 +32,23 @@ devDependencies:
   svelte-preprocess: 4.10.7_0eba0ef4e2eef50ef94ca417172c0cd2
   tailwindcss: 3.2.7
   tslib: 2.5.0
+  two-up-element: 1.0.1
   typescript: 4.9.5
   vite: 4.1.4
 
 packages:
+
+  /@cloudinary/transformation-builder-sdk/1.2.6:
+    resolution: {integrity: sha512-+ae+01Z+g5DprnjP502jqc9iInRHGUEXl0eUQfHjbLI+lJ76TTP5yNqgrnMocy///z1LS/qh4lrOC8DQdKwsNA==}
+    dependencies:
+      '@cloudinary/url-gen': 1.9.1
+    dev: false
+
+  /@cloudinary/url-gen/1.9.1:
+    resolution: {integrity: sha512-P1zgWug/dMieYoA/XxYQloPCLsvm2QWG5AZoMtMqwBFKPljSlLS7o4fFCO5coCt0nv3KKTiygRMSiwKSL/XuLA==}
+    dependencies:
+      '@cloudinary/transformation-builder-sdk': 1.2.6
+    dev: false
 
   /@esbuild/android-arm/0.16.17:
     resolution: {integrity: sha512-N9x1CMXVhtWEAMS7pNNONyA14f71VPQN9Cnavj1XQh6T7bskqiLLrSca4O0Vr8Wdcga943eThxnVp3JLnBMYtw==}
@@ -262,6 +282,10 @@ packages:
       - supports-color
     dev: true
 
+  /@swc/helpers/0.2.14:
+    resolution: {integrity: sha512-wpCQMhf5p5GhNg2MmGKXzUNwxe7zRiCsmqYsamez2beP7mKPCSiu+BjZcdN95yYSzO857kr0VfQewmGpS77nqA==}
+    dev: false
+
   /@tsconfig/svelte/3.0.0:
     resolution: {integrity: sha512-pYrtLtOwku/7r1i9AMONsJMVYAtk3hzOfiGNekhtq5tYBGA7unMve8RvUclKLMT3PrihvJqUmzsRGh0RP84hKg==}
     dev: true
@@ -452,6 +476,13 @@ packages:
     resolution: {integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==}
     dev: true
 
+  /dropzone/6.0.0-beta.2:
+    resolution: {integrity: sha512-k44yLuFFhRk53M8zP71FaaNzJYIzr99SKmpbO/oZKNslDjNXQsBTdfLs+iONd0U0L94zzlFzRnFdqbLcs7h9fQ==}
+    dependencies:
+      '@swc/helpers': 0.2.14
+      just-extend: 5.1.1
+    dev: false
+
   /electron-to-chromium/1.4.305:
     resolution: {integrity: sha512-WETy6tG0CT5gm1O+xCbyapWNsCcmIvrn4NHViIGYo2AT8FV2qUCXdaB+WqYxSv/vS5mFqhBYnfZAAkVArjBmUg==}
     dev: true
@@ -623,6 +654,10 @@ packages:
     engines: {node: '>=0.12.0'}
     dev: true
 
+  /just-extend/5.1.1:
+    resolution: {integrity: sha512-b+z6yF1d4EOyDgylzQo5IminlUmzSeqR1hs/bzjBNjuGras4FXq/6TrzjxfN0j+TmI0ltJzTNlqXUMCniciwKQ==}
+    dev: false
+
   /kleur/4.1.5:
     resolution: {integrity: sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==}
     engines: {node: '>=6'}
@@ -749,6 +784,10 @@ packages:
   /pify/2.3.0:
     resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  /pointer-tracker/2.5.3:
+    resolution: {integrity: sha512-LiJUeIbzk4dXq678YeyrZ++mdY17q4n/2sBHfU9wIuvmSzdiPgMvmvWN2g8mY4J7YwYOIrqrZUWP/MfFHVwYtg==}
     dev: true
 
   /postcss-import/14.1.0_postcss@8.4.21:
@@ -1084,6 +1123,12 @@ packages:
 
   /tslib/2.5.0:
     resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
+    dev: true
+
+  /two-up-element/1.0.1:
+    resolution: {integrity: sha512-KjN4SBkOKeQ6LgZDOaxgnHyXV/VkmCXELeQSPs8GJUP8yFSqrH5pw9KxI/dny3pJdywe+ae+YiM4I/s91EGhOA==}
+    dependencies:
+      pointer-tracker: 2.5.3
     dev: true
 
   /typescript/4.9.5:
